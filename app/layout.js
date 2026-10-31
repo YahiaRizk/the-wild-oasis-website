@@ -4,7 +4,6 @@ const josefin = Josefin_Sans({
   subsets: ["latin"],
   display: "swap",
 });
-console.log(josefin);
 
 import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
