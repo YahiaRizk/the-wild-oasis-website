@@ -1,7 +1,11 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 import CabinCard from "@/app/_components/CabinCard";
 import { getCabins } from "../_lib/data-service";
 
 async function CabinsList() {
+  // This to make this component dynamic render
+  // noStore();
   const cabins = await getCabins();
 
   if (!cabins.length) return null;

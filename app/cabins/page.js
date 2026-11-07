@@ -2,6 +2,12 @@ import { Suspense } from "react";
 import Spinner from "@/app/_components/Spinner";
 import CabinsList from "./CabinsList";
 
+// This to make the page dynamic not static, so it revalidate
+// the data every 0 seconds so the data always fresh
+// export const revalidate = 0;
+// This will validate the data every hour(3600seconds)
+export const revalidate = 3600;
+
 export const metadata = {
   title: "Cabins",
 };
