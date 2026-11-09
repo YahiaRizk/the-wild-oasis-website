@@ -143,10 +143,16 @@ export async function getSettings() {
 export async function getCountries() {
   try {
     const res = await fetch(
-      "https://restcountries.com/v3.1/all?fields=name,flag",
+      // "https://restcountries.com/v5/all?fields=name,flag", //old
+      "https://api.restcountries.com/countries/v5?response_fields=names,flag",
+      {
+        headers: {
+          Authorization: "Bearer rc_live_e1f638b58c324589ac304a7a3960a904",
+        },
+      },
     );
-    const countries = await res.json();
-    console.log(countries);
+    const countries = (await res.json()).data["objects"];
+    // console.log(countries);
     return countries;
   } catch {
     throw new Error("Could not fetch countries");
