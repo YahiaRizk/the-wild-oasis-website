@@ -1,7 +1,8 @@
-import { Suspense } from "react";
 import Spinner from "@/app/_components/Spinner";
-import CabinsList from "./CabinsList";
+import { Suspense } from "react";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
+import CabinsList from "./CabinsList";
 
 // This to make the page dynamic not static, so it revalidate
 // the data every 0 seconds so the data always fresh
@@ -36,6 +37,7 @@ export default function Page({ searchParams }) {
 
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinsList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );
