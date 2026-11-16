@@ -6,9 +6,9 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
   const countries = await getCountries();
 
   const flag =
-    countries.find((country) => country.names.common === defaultCountry)
-      ?.flag ?? "";
-  console.log(defaultCountry);
+    countries.find((country) => country.names.common === defaultCountry)?.flag
+      .url_svg ?? "";
+  console.log(flag);
 
   // return <div>Select Country</div>;
 
