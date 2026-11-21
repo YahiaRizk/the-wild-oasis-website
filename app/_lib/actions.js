@@ -39,6 +39,10 @@ export async function signOutAction() {
   await signOut({ redirectTo: "/" });
 }
 
+export async function createReservation(bookingData, formData) {
+  console.log(formData);
+}
+
 export async function updateResrvation(formData) {
   // 1-authentication
   // chceck if user is  logged in(authinticated)
